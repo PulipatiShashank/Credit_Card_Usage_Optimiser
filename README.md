@@ -16,3 +16,19 @@ This is a Python-based CLI tool that provides benefits and cashback details for 
 
 ## 📁 Folder Structure
 
+project/
+├── pdfs/ # Put all your credit card PDFs here
+│ ├── sbi_cashback_2024.pdf
+│ ├── axis_myzone.pdf
+│ └── kotak_myntra.pdf
+├── card.py # Main Python CLI script
+├── README.md # This file
+
+
+---
+
+## ⚙️ Requirements
+
+- Python 3.7+
+- Install dependencies:
+
