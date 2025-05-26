@@ -1,18 +1,17 @@
 import sys
 import os
-import fitz  # PyMuPDF
+import fitz
 import openai
 from datetime import datetime
 import tiktoken
 import re
 
-# ✅ Replace with your OpenAI API key
+
 client = openai.OpenAI(api_key="")
 
 PDF_DIR = "pdfs"
 
 def extract_keywords(text):
-    # Grab lowercase keywords excluding common stopwords
     stopwords = {"i", "have", "card", "credit", "the", "my", "a", "an"}
     words = re.findall(r"\b[a-zA-Z]+\b", text.lower())
     return [word for word in words if word not in stopwords]
@@ -29,8 +28,6 @@ def extract_text_from_matching_pdfs(card_name, pdf_dir):
     if not matched_files:
         print(f"❌ No matching PDFs found for: {card_name} with keywords {keywords}")
         return ""
-
-    print(f"📂 Matching PDFs: {matched_files}")
     
     for filename in matched_files:
         filepath = os.path.join(pdf_dir, filename)
