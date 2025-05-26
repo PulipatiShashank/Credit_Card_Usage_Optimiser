@@ -31,4 +31,5 @@ project/
 
 - Python 3.7+
 - Install dependencies:
-
+```bash
+pip install openai pymupdf tiktoken
